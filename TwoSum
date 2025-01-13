@@ -1,0 +1,18 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        length = len(nums)
+        found = -1 
+        for i in range(length):
+            remaining = target - nums[i]
+            for j in range(i+1,length) :
+                if nums[j] == remaining:  # Check if the complement is found
+                    return [i, j]
+        return[]  
+
+solution = Solution()
+result = solution.twoSum([2, 7, 11, 15], 9)
+print("Output:",result)
+
+    
+
+        
