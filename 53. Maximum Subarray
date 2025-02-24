@@ -1,0 +1,19 @@
+# to get the time complexity to O(n)
+# i will try to ignore starting from negetive values and 
+# where ever the sum is less than positive again it will be discarded 
+
+
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        cur = 0 
+        max_sum = float('-inf')
+        # this loop itrates through the list
+        for i in range (len(nums)):
+            cur = cur + nums[i]
+            max_sum = max ( cur , max_sum)
+            # we will ignore wherever the sum gets to -ve as they dp not contribute to get the max_sum
+            if cur < 0 :
+                cur = 0
+        
+        return max_sum 
+        
